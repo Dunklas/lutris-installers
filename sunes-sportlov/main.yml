@@ -1,15 +1,12 @@
 ---
 name: Sunes Sportlov
 game_slug: sunes-sportlov
-version: Installer
+version: Regular
 slug: sunes-sportlov
 runner: wine
-
-# Can I script the installation wizard? Currently depending on that C:\suneslov is selected as installation directory
-
 script:
   files:
-  - installer: "N/A:Select iso file"
+  - installer: "https://archive.org/download/sune_20190817/SUNE.iso"
   game:
     exe: $GAMEDIR/win/drive_c/suneslov/SUNE_95.exe
     prefix: $GAMEDIR/win
