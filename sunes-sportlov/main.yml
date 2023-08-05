@@ -28,6 +28,32 @@ script:
       arch: win32
       prefix: "$GAMEDIR/win"
       executable: "$GAMEDIR/install-files/INSTALL.exe"
+      args: "/s /x \"C:\\suneslov\""
+  - execute:
+      command: "mkdir $GAMEDIR/win/drive_c/suneslov/LOV"
+  - execute:
+      command: "mkdir $GAMEDIR/win/drive_c/suneslov/XTRAS"
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/1.swh
+      dst: $GAMEDIR/win/drive_c/suneslov/LOV/1.swh
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/2.swh
+      dst: $GAMEDIR/win/drive_c/suneslov/LOV/2.swh
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/3.swh
+      dst: $GAMEDIR/win/drive_c/suneslov/LOV/3.swh
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/4.swh
+      dst: $GAMEDIR/win/drive_c/suneslov/LOV/4.swh
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/5.swh
+      dst: $GAMEDIR/win/drive_c/suneslov/LOV/5.swh
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/hiscore.txt
+      dst: $GAMEDIR/win/drive_c/suneslov/LOV/hiscore.txt
+  - move:
+      src: $GAMEDIR/win/drive_c/suneslov/fileio.x32
+      dst: $GAMEDIR/win/drive_c/suneslov/XTRAS/fileio.x32
   - execute:
       command: "ln -s $GAMEDIR/install-files $GAMEDIR/win/dosdevices/d:"
   wine:
