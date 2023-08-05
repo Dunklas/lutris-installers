@@ -1,7 +1,7 @@
 ---
 name: Sunes Sportlov
 game_slug: sunes-sportlov
-version: Regular
+version: Basic game
 slug: sunes-sportlov
 runner: wine
 script:
