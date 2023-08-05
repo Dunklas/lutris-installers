@@ -5,16 +5,14 @@ version: Installer
 slug: sunes-sportlov
 runner: wine
 
-# This script works if I run 'sudo mount -o loop sunes-sportlov.iso /mnt/cd' prior to launching the game
-# Can I trick wine into thinking that a CD is inserted in some other way?
 # Can I script the installation wizard? Currently depending on that C:\suneslov is selected as installation directory
 
 script:
   files:
-  - installer: "N/A:Select the game's setup file"
+  - installer: "N/A:Select iso file"
   game:
-    exe: $GAMEDIR/drive_c/suneslov/SUNE_95.exe
-    prefix: $GAMEDIR
+    exe: $GAMEDIR/win/drive_c/suneslov/SUNE_95.exe
+    prefix: $GAMEDIR/win
     arch: win32
   installer:
   - task:
@@ -24,19 +22,15 @@ script:
       prefix: "$GAMEDIR"
   - extract:
       file: installer
-      dst: "$GAMEDIR/temp/"
-      # dst: "$GAMEDIR/dosdevices/d::"
+      dst: "$GAMEDIR/install-files/"
   - task:
       name: wineexec
       arch: win32
-      prefix: "$GAMEDIR"
-      executable: "$GAMEDIR/temp/INSTALL.exe"
+      prefix: "$GAMEDIR/win"
+      executable: "$GAMEDIR/install-files/INSTALL.exe"
   - execute:
-      command: ln -s "$GAMEDIR/temp" "$GAMEDIR/dosdevices/d::"
+      command: "ln -s $GAMEDIR/install-files $GAMEDIR/win/dosdevices/d:"
   wine:
     Desktop: true
     overrides:
       ddraw.dll: n
-  system:
-    env:
-      SOMEENV: true
