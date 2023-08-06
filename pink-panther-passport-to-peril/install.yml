@@ -1,0 +1,21 @@
+---
+name: "The Pink Panther: Passport to Peril"
+game_slug: the-pink-panther-passport-to-peril
+version: Basic game
+slug: the-pink-panther-passport-to-peril
+runner: scummvm
+script:
+  files:
+  - passport_to_peril: "https://archive.org/download/PinkPantherPtP_201608/Pink_Panther.rar"
+  game:
+    game_id: pink:peril
+    path: $GAMEDIR
+  installer:
+  - extract:
+      file: passport_to_peril
+      dst: "$CACHE/"
+  - execute:
+      command: bchunk "$CACHE/pink panther passport to peril.bin" "$CACHE/Pink Panther Passport to Peril.cue" "$CACHE/peril.iso"
+  - extract:
+      file: "$CACHE/peril.iso01.iso"
+      dst: "$GAMEDIR"
