@@ -1,7 +1,7 @@
 ---
-name: "The Pink Panther: Hokus Pokus Pink (swe)"
-game_slug: the-pink-panther-hokus-pokus-pink-sv
-version: Basic game
+name: "The Pink Panther: Hokus Pokus Pink"
+game_slug: the-pink-panther-hokus-pokus-pink
+version: Swedish
 slug: the-pink-panther-hokus-pokus-pink-sv
 runner: scummvm
 script:
