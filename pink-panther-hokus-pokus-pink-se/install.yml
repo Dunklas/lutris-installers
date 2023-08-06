@@ -1,0 +1,21 @@
+---
+name: "The Pink Panther: Hokus Pokus Pink (swe)"
+game_slug: the-pink-panther-hokus-pokus-pink-sv
+version: Basic game
+slug: the-pink-panther-hokus-pokus-pink-sv
+runner: scummvm
+script:
+  files:
+  - hokus_pokus_pink: "https://archive.org/download/the-pink-panther-hokus-pokus-pink-win-rom-sv/The_Pink_Panther_Hokus_Pokus_Pink_Win_ROM_SV.zip"
+  game:
+    game_id: pink:pokus
+    path: $GAMEDIR
+  installer:
+  - extract:
+      file: hokus_pokus_pink
+      dst: "$CACHE/"
+  - execute:
+      command: bchunk "$CACHE/Game Files/Hokus.Pokus.Panter-tusaiso.bin" "$CACHE/Game Files/Hokus.Pokus.Panter-tusaiso.cue" "$CACHE/hokus_pokus_pink.iso"
+  - extract:
+      file: "$CACHE/hokus_pokus_pink.iso01.iso"
+      dst: "$GAMEDIR"
