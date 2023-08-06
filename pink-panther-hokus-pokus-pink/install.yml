@@ -1,0 +1,16 @@
+---
+name: "The Pink Panther: Hokus Pokus Pink"
+game_slug: the-pink-panther-hokus-pokus-pink
+version: Basic game
+slug: the-pink-panther-hokus-pokus-pink
+runner: scummvm
+script:
+  files:
+  - hokus_pokus_pink: "https://archive.org/download/the-pink-panther-hokus-pokus-pink-cd-rom-1998/Pokus.iso"
+  game:
+    game_id: pink:pokus
+    path: $GAMEDIR
+  installer:
+  - extract:
+      file: hokus_pokus_pink
+      dst: "$GAMEDIR/"
