@@ -53,6 +53,10 @@ script:
       dst: $GAMEDIR/win/drive_c/suneslov/XTRAS/fileio.x32
   - execute:
       command: "ln -s $GAMEDIR/install-files $GAMEDIR/win/dosdevices/d:"
+  - task:
+      name: winetricks
+      app: win95
+      silent: true
   wine:
     Desktop: true
     overrides:
